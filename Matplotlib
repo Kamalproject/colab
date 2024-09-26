@@ -1,0 +1,29 @@
+# create Bar chart and its properties using matplotlib
+#Create Bar Graph using Matplotlib
+
+import matplotlib.pyplot as plt
+import numpy as np
+x=["Kamal", "Ajya","Kuna","Kanha", "Lochan","Aju"]
+y=(12,14,85,41,78,52)
+z=(41,75,20,32,52,22)
+
+width=0.2
+p=np.arange(len(x))
+p1=[j+width for j in p]
+
+plt.xlabel("Name")
+plt.ylabel("Age")
+
+color=["red","green","blue","yellow","orange","pink"]
+ec=["black","black","black","black","black","black"]
+
+
+plt.title("Data")
+plt.bar(p,y,0.2, color=color, edgecolor=ec, linestyle=":", linewidth=1.5, label="Students Data")
+plt.bar(p1,z, 0.2, color="black", label="Students Data 2")
+
+plt.legend(loc="upper right")
+plt.xticks(p+width/2,x,rotation=10)
+plt.grid(True, which='minor', color="red")
+plt.grid(True, color="green")
+plt.show()    
